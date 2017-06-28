@@ -4,8 +4,14 @@
 		  get_header();
 ?> 
  
+   <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script -->
  
-    <head1>
+ <br/>
+  
+    <rktree class="panel-body tree-view">
+		 
         <title>Family Tree</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
 		<!-- script src="js/d3.js"></script -->
@@ -16,24 +22,13 @@
          <script src="js/main.js"></script>
 		 
 		<script type="text/javascript">     
-		   // window.addEventListener('load', init, false );
-
-            /*function init(){
-                 loadJs("js/main.js");
-                 return false;
-            }*/
-			
-            /*function loadJs(fileName){
-                setTimeout(function(){
-                     var script = document.createElement("script");
-                     script.type = "text/javascript";
-                     script.src = fileName; 
-                     document.getElementsByTagName("head")[0].appendChild(script);
-			 	 }, 10);
-            }*/
+ 
         </script>
         
-    </head1>
+    </rktree>
+		
+ 
+ 
     
  
  <?php get_footer(); ?>
