@@ -1,0 +1,10 @@
+{
+    "member": {
+        "id": "34sdt348f7",
+        "firstname": "Natālija",
+        "lastname":  "Kurčanova",
+        "sex": 2,
+        "image": "people/kurchik.jpg",
+        "current": true
+    }
+}

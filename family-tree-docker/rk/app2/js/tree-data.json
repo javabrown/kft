@@ -1,0 +1,76 @@
+{
+					chart: {
+						container: "#custom-colored",
+
+						nodeAlign: "BOTTOM",
+
+						connectors: {
+							type: 'step'
+						},
+						node: {
+							HTMLclass: 'nodeExample1'
+						}
+					},
+					nodeStructure: {
+						id: 1,
+						text: {
+							id: 1,
+							name: "Mark Hill",
+							title: "Bangalore, India",
+							contact: "Tel: 01 213 123 134",
+						},
+						image: "images/icon-person.png",
+						children: [
+							{   
+							    id:2,
+								text:{
+									id:2,
+									name: "Joe Linux",
+									title: "Bangalore, India",
+								},
+								image: "images/icon-person1.png",
+								HTMLclass: 'light-gray',
+								children: [
+									{
+										id:3,
+										text:{
+											id:3,
+											name: "Ron Blomquist",
+											title: "White Plains, New York"
+										},
+										HTMLclass: 'light-gray',
+										image: "images/icon-person1.png",
+										children: []
+									}
+								]
+							},
+{id:"1.1",  text:{  id:"1.1", name: "Mr. Nizamuddin Ahmed & Mumanima",  title: "-" }, HTMLclass: "blue", image: "images/icon-person1.png", children: [] },
+							
+							
+							{
+								childrenDropLevel: 2,
+								id:4,
+								text:{
+									id:4,
+									name: "Linda May",
+									title: "North Brunswick, NJ",
+								},
+								HTMLclass: 'blue',
+								image: "images/icon-person1.png",
+								children: [
+									{
+									    id:5,
+										text:{
+											 id:5,
+											name: "Alice Lopez",
+											title: "Los Angeles, CA"
+										},
+										HTMLclass: 'blue',
+										image: "images/icon-person1.png",
+										children: []							
+									},
+								]
+							}
+						]
+					}
+				}

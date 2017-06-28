@@ -1,0 +1,158 @@
+/**
+ * TEMP
+ */
+@font-face { font-family: DejaVuSans; src: url('../fonts/DejaVuSans.ttf'); }
+@font-face { font-family: DejaVuSans; font-weight: bold; src: url('../fonts/DejaVuSans-Bold.ttf'); }
+@font-face { font-family: DejaVuSans-ExtraLight; font-weight: bold; src: url('../fonts/DejaVuSans-ExtraLight.ttf'); }
+@font-face { font-family: DejaVuSans-Mono; font-weight: bold; src: url('../fonts/DejaVuSansMono.ttf'); }
+
+* {
+    margin:  0px;
+    padding: 0px;
+}
+
+html, body {
+    width:  100%;
+    height: 100%;
+}
+
+body {
+    font-family: "DejaVuSans", sans-serif;
+}
+
+
+/**
+ * FSKYTREE HISTORY
+ */
+#fskytree-history {
+
+    font-family: "DejaVuSans-ExtraLight", sans-serif;
+    position: absolute;
+    top:   0px;
+    left: 0px;
+    max-width: 200px;
+    z-index: 1;
+
+    .title {
+        font-size: 25px;
+        font-weight: lighter;
+        color: #044d85;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .history-list {
+        list-style: none;
+    }
+
+    .history-list .list-item {
+        font-size: 0px;
+        text-align: center;
+
+        a {
+            white-space: nowrap;
+            display: inline-block;
+            font-size: 16px;
+            color: #415478;
+            text-align: center;
+            text-decoration: none;
+            padding: 5px 20px;
+        }
+
+        &.active a {
+            background: #E3E7F3;
+        }
+    }
+
+    .history-list .list-item:before {
+        content: "";
+        display: block;
+        margin: 5px auto;
+        width:  16px;
+        height: 16px;
+        background: url("../img/arrow.png") no-repeat center center;
+    }
+
+    .history-list .list-item:first-child:before {
+        display: none;
+    }
+}
+
+
+/**
+ * FSKYTREE
+ */
+#fskytree-wrapper {
+    position: absolute;
+    top:    0px;
+    left:   0px;
+    right:  0px;
+    bottom: 0px;
+    overflow: hidden;
+
+    &.loading:after {
+        content: "";
+        display: block;
+        width:  64px;
+        height: 64px;
+        background: url("../img/loader.gif") no-repeat center center;
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        margin-left: -32px;
+        margin-top:  -32px;
+    }
+
+    .fskytree-container {
+        width:  100%;
+        height: 100%;
+
+        svg {
+            display: block;
+        }
+    }
+}
+
+
+/**
+ * FSKYTREE OVERLAY
+ */
+#fskytree-overlay {
+    display: none;
+    position: absolute;
+    top:    0px;
+    right:  0px;
+    bottom: 0px;
+    left:   0px;
+    z-index: 100;
+    background-color: rgba(255,255,255, .9);
+
+    svg {
+        display: block;
+    }
+
+    .close {
+        color: #FFF;
+        font-size: 14px;
+        min-width: 100px;
+        padding:  10px 15px;
+        position: absolute;
+        right: 20px;
+        top:   20px;
+        background-color: rgba(111, 139, 202, .8);
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .close:after {
+        content: "×";
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .close:hover {
+        background-color: rgba(111, 139, 202, 1);
+    }
+}

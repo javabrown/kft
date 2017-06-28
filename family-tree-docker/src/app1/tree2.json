@@ -1,0 +1,47 @@
+{
+    "member": {
+        "id": "6ej775223r3",
+        "firstname": "Linda",
+        "lastname":  "Zaikovska",
+        "sex": 2,
+        "image": "people/linda.jpg"
+    },
+    "children": [
+        {
+            "member": {
+                "id": "6ej774t23r3",
+                "firstname": "Jūlija",
+                "lastname":  "Belova",
+                "current": true,
+                "sex": 2,
+                "image": "people/julja.jpg"
+            },
+            "partner": {
+                "id": "sdf4fsh544",
+                "firstname": "Oļegs",
+                "lastname":  "Jaroševičs",
+                "sex": 1,
+                "image": "people/oleg.jpg",
+                "relatives": 4
+            }
+        },
+        {
+            "member": {
+                "id": "6ej774t23r3",
+                "firstname": "Nataļja",
+                "lastname":  "Kočjuga",
+                "sex": 2,
+                "image": "people/kochuga.jpg"
+            }
+        },
+        {
+            "member": {
+                "id": "gg57h5623r3",
+                "firstname": "Sergejs",
+                "lastname":  "Trofimovs",
+                "sex": 1,
+                "image": "people/trafim.jpg"
+            }
+        }
+    ]
+}

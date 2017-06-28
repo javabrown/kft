@@ -1,0 +1,174 @@
+{
+    "member": {
+        "id": "34sdt348f7",
+        "firstname": "Natālija",
+        "lastname":  "Kurčanova",
+        "sex": 2,
+        "image": "people/kurchik.jpg"
+    },
+    "children": [
+        {
+            "member": {
+                "id": "34kit348f7",
+                "firstname": "Andrejs",
+                "lastname":  "Jeļisejevs",
+                "sex": 1,
+                "image": "people/elisej.jpg"
+            },
+            "children": [
+                {
+                    "member": {
+                        "id": "11kit348f1",
+                        "firstname": "Natālija",
+                        "lastname":  "Tarasova",
+                        "sex": 2,
+                        "image": "people/tarasik.jpg"
+                    }
+                },
+                {
+                    "member": {
+                        "id": "dgkit548f1",
+                        "firstname": "Inna",
+                        "lastname":  "Adameņa",
+                        "sex": 2,
+                        "image": "people/inna.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "member": {
+                "id": "666it548f1",
+                "firstname": "Darja",
+                "lastname":  "Petrušina",
+                "sex": 2,
+                "current": true,
+                "image": "people/dasha.jpg"
+            },
+            "partner": {
+                "id": "4389t548f1",
+                "firstname": "Pāvels",
+                "lastname":  "Degterenko",
+                "sex": 1,
+                "image": "people/pavel.jpg",
+                "relatives": 2
+            },
+            "children": [
+                {
+                    "member": {
+                        "id": "sdf4fsh544",
+                        "firstname": "Oļegs",
+                        "lastname":  "Jaroševičs",
+                        "sex": 1,
+                        "image": "people/oleg.jpg"
+                    },
+                    "partner": {
+                        "id": "6ej774t23r3",
+                        "firstname": "Jūlija",
+                        "lastname":  "Belova",
+                        "sex": 2,
+                        "image": "people/julja.jpg",
+                        "relatives": 4
+                    },
+                    "children": [
+                        {
+                            "member": {
+                                "id": "d5745fg5f1",
+                                "firstname": "Andrejs",
+                                "lastname":  "Silins",
+                                "sex": 1,
+                                "image": "people/silin.jpg"
+                            }
+                        },
+                        {
+                            "member": {
+                                "id": "435dfdf23",
+                                "firstname": "Dmitrijs",
+                                "lastname":  "Migunovs",
+                                "sex": 1,
+                                "image": "people/migunov.jpg"
+                            }
+                        },
+                        {
+                            "member": {
+                                "id": "dasdfdgkdf1",
+                                "firstname": "Eduards",
+                                "lastname":  "Plehs",
+                                "sex": 1,
+                                "image": "people/plehs.jpg"
+                            }
+                        },
+                        {
+                            "member": {
+                                "id": "3434sdf548f1",
+                                "firstname": "Ivo",
+                                "lastname":  "Azirjans",
+                                "sex": 1,
+                                "image": "people/ivo.jpg"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "member": {
+                "id": "dere343er34",
+                "firstname": "Edgars",
+                "lastname":  "Bokta",
+                "sex": 1,
+                "image": "people/bokta.jpg"
+            },
+            "children": [
+                {
+                    "member": {
+                        "id": "d45465448f1",
+                        "firstname": "Anastasija",
+                        "lastname":  "Jevdokimova",
+                        "sex": 2,
+                        "image": "people/nastja.jpg"
+                    },
+                    "children": [
+                        {
+                            "member": {
+                                "id": "uu3245ef48f1",
+                                "firstname": "Antija",
+                                "lastname":  "Janševska",
+                                "sex": 2,
+                                "image": "people/antija.jpg"
+                            }
+                        },
+                        {
+                            "member": {
+                                "id": "32fdf43t548f1",
+                                "firstname": "Dina",
+                                "lastname":  "Konopļova",
+                                "sex": 2,
+                                "image": "people/dina.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "member": {
+                        "id": "23ffkit5484",
+                        "firstname": "Maksims",
+                        "lastname":  "Kondratjevs",
+                        "sex": 1,
+                        "image": "people/maks.jpg",
+                        "alive": false
+                    }
+                },
+                {
+                    "member": {
+                        "id": "123it5648f1",
+                        "firstname": "Vitālijs",
+                        "lastname":  "Silins",
+                        "sex": 1,
+                        "image": "people/vitalik.jpg"
+                    }
+                }
+            ]
+        }
+    ]
+}
