@@ -1,7 +1,7 @@
 <?php 
           require('../../../wp-blog-header.php');
 		  include('../../../wp-content/themes/hestia/header.php'); ///wp-content/themes/hestia
-		  get_header();
+		  //get_header();
 ?> 
  
    <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
  
  <br/>
   
-    <rktree class="panel-body tree-view">
+    <div class="panel-body tree-view">
 		 
         <title>Family Tree</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
@@ -25,7 +25,7 @@
  
         </script>
         
-    </rktree>
+    </div>
 		
  
  
