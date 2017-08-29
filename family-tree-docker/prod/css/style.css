@@ -19,19 +19,23 @@
     display: block;
 }
 
+
 #img-upload{
-    width: 100%;
+    height: 200px !important;
+    width: 50% !important;
 }
 
 input[type="text"]
 {
-    font-size:24px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size:20px;
+    color: blue;
 }
-body {
+.container > *{
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 p {
-    font-size: 3em;
+    font-size: 2em;
 }
 /**********************NON-D3CSS END*************************/
 

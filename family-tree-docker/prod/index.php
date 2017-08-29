@@ -1,8 +1,9 @@
-<!-- ?php 
-          require('../../../wp-blog-header.php');
-		  include('../../../wp-content/themes/hestia/header.php'); ///wp-content/themes/hestia
+<?php 
+          require('../../wp-blog-header.php');
+		  include('../../wp-content/themes/hestia/header.php'); ///wp-content/themes/hestia
 		  //get_header();
-? --> 
+?> 
+
  
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -13,7 +14,7 @@
     <rktree class="panel-body tree-view">
 		 
         <title>Family Tree</title>
-		<script type="text/javascript" src="//d3js.org/d3.v3.js"></script>
+		<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
 		<!-- script src="js/d3.js"></script -->
 		
         <!-- script src="js/main.js"></script -->
@@ -43,9 +44,8 @@
 			  
 			  <!-- *********MODEL-BODY-BEGIN ******* -->
 				<div class="container">
-					  <h2>Form control: input</h2>
 		
-					  <div class="col-md-6">
+					  <div class="col-md-12">
 					  <form>
 						<div class="form-group">
 						  <label for="usr">Name:</label>
@@ -66,7 +66,7 @@
 									</span>
 								</span>
 								<input type="text" class="form-control" readonly>
-								<img id='img-upload' width="200" height="200"/>
+								<img id='img-upload' width="100" height="100"/>
 							</div>
 						</div>
 
@@ -132,4 +132,4 @@
  
     
  
- <!-- ?php get_footer(); ? -->
+ <?php get_footer(); ?>
