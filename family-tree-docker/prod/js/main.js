@@ -238,6 +238,7 @@ function clearInputFields(){
 function doEditSelectedMember(){
 	action = 'EDIT_MEMBER';
 	disableInputFields(false);
+	return;
 }
 
 function doAddNewMember(){
@@ -258,7 +259,7 @@ function replacer(key,value)
     else if (key=="__proto__") return undefined;
     else if (key=="id") return undefined;
   
-	console.log(key + " ==> " + value);
+	//console.log(key + " ==> " + value);
 	
 	return value;
 }
@@ -286,36 +287,50 @@ function extractUpdatedJsonFromTree(){
 	return jsonString;
 }
  
+function get64BitImg() {
+	$("#myCanvas").show();
+    var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	var img = document.getElementById("img-upload");
+	
+	ctx.drawImage(img, 0, 0, 100, 100 * img.height / img.width);
+	var data = c.toDataURL();
+	$("#myCanvas").hide();
+	return data;
+}
 
-function saveData(){
+function saveData() {
 	disableInputFields(true);
+
+	var imageName = $("#name").val().replace(/ /g,"_");
+    var bit64imageData = get64BitImg();
+	var photoServerPath = "js/data_uploads/" + imageName + ".jpg";
 	
 	if(action == 'ADD_NEW'){
-	    var newNode = {"husband": $("#name").val(), "wife": $("#spause_name").val(), "photo": "images/icon-person.png", "children": []};
-		alert(newNode);
+	    var newNode = {"husband": $("#name").val(), "wife": $("#spause_name").val(), "photo": photoServerPath, "children": []};
+		//alert(newNode);
 		
-		if (selected_node_for_edit.children) { 
+		if (selected_node_for_edit.children) {
 			selected_node_for_edit.children.push(newNode);
-		} else { 
+		} else {
 			selected_node_for_edit.children = [newNode];
-		}	  
+		}
  
 		var jsonString = extractUpdatedJsonFromTree();
-	    console.log( jsonString ); 
-		$.post("upload.php", { json_data: jsonString }, function(data, status){ alert("Data: " + data + "\nStatus: " + status); });
-	
-		//initializeD3System.update(selected_node_for_edit);
-		alert('done');
+	    //console.log( jsonString );
+		$.post("upload.php", { json_data: jsonString, image_data: bit64imageData, image_name:imageName }, function(data, status){ console.log("Data: " + data + "\nStatus: " + status); });
 	}
 	else if(action == 'EDIT_MEMBER'){
-		alert('EDIT_MEMBER');
+		//alert('EDIT_MEMBER');
 		selected_node_for_edit['husband'] = $("#name").val();
 		selected_node_for_edit['wife'] = $("#spause_name").val();
+		selected_node_for_edit['photo'] = photoServerPath;
 		//initializeD3System.update(selected_node_for_edit);
+		//alert(get64BitImg());
 		
 		var jsonString = extractUpdatedJsonFromTree();
-	    console.log( jsonString ); 
-		$.post("upload.php", { json_data: jsonString }, function(data, status){ alert("Data: " + data + "\nStatus: " + status); });		
+	    //console.log( jsonString ); 
+		$.post("upload.php", { json_data: jsonString, image_data: bit64imageData, image_name:imageName }, function(data, status){ console.log("Data: " + data + "\nStatus: " + status); });		
 	}
 	
     $('#myModal').modal('hide');		

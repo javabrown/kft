@@ -1,10 +1,10 @@
 <?php
-/*$target_dir = "js/data-uploads/";
+$target_dir = "js/data-uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-
+echo "rk uploaded==> ". $target_file;
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -14,7 +14,7 @@ if(isset($_POST["submit"])) {
         echo "File is not an image.";
         $uploadOk = 0;
     }
-}*/
+}
 ?>
 
 <?php
@@ -26,7 +26,12 @@ $target_dir = "js/data-uploads/";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$json_data = test_input($_POST["json_data"]);
-	echo $json_data;
+	$base64_data = test_input($_POST["image_data"]);
+	$image_name = test_input($_POST["image_name"]);
+	
+	echo $json_data . "<br/>" . $image_name . "<hr/>". $base64_data;
+	base64_to_jpeg($base64_data, "js/data_uploads/$image_name.jpg");
+	
 	$t=time();
 	$timestamp = date("Y-m-d.H-i-s",$t);
 	
@@ -49,5 +54,23 @@ function test_input($data) {
   //$data = stripslashes($data);
   //$data = htmlspecialchars($data);
   return $data;
+}
+
+function base64_to_jpeg($base64_string, $output_file) {
+    // open the output file for writing
+    $ifp = fopen( $output_file, 'wb' ); 
+
+    // split the string on commas
+    // $data[ 0 ] == "data:image/png;base64"
+    // $data[ 1 ] == <actual base64 string>
+    $data = explode( ',', $base64_string );
+
+    // we could add validation here with ensuring count( $data ) > 1
+    fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+
+    // clean up the file resource
+    fclose( $ifp ); 
+
+    return $output_file; 
 }
 ?>
