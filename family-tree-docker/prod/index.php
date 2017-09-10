@@ -13,7 +13,7 @@
 				   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 				   <script type="text/javascript" src="https://d3js.org/d3.v3.js"></script>';
 		}
-		else{echo "hello";
+		else{
 			echo  '<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 				   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 				   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -54,7 +54,14 @@
 					<div class="modal-content">
 					<div class="modal-header">
 					  <button type="button" class="close" data-dismiss="modal">&times;</button>
-					  <h4 class="modal-title">Edit Member | Add New Child Member</h4>
+                                           <?php 
+                                               if ( current_user_can( 'administrator' ) || current_user_can( 'editor' ) ){
+					           echo "<h4 class='modal-title'>Edit Member | Add New Child Member</h4>";
+                                               }
+                                              else {
+                                                  echo "<h4 class='modal-title'><a href='http://khaiyumfamily.com/wp-login.php' target='_blank'>Login</a> to Add or Modify the Family Tree</h4>";
+                                              }
+                                           ?>
 					</div>
 					<div class="modal-body">
 					  
@@ -95,12 +102,21 @@
 					  
 					</div>
 					<div class="modal-footer">
-					
-					  <button type="button" class="btn btn-primary" onClick="doEditSelectedMember()"  id="edit_selected_member">Edit This Member</button>
-					  <button type="button" class="btn btn-warning" onClick="doAddNewMember()"  id="add_new_child_member">Add New Child Member</button>
-					  <button type="button" class="btn btn-danger"  onClick="saveData()" id="save_btn">Save</button>
+
+					    <?php 
+                                               if ( current_user_can( 'administrator' ) ||  current_user_can( 'editor' ) ){
+					           echo "<button type='button' class='btn btn-primary' onClick='doEditSelectedMember()'  id='edit_selected_member'>Edit This Member</button>";
+
+					          echo '<button type="button" class="btn btn-warning" onClick="doAddNewMember()" id="add_new_child_member">Add New Child Member</button>';
+
+ 					         echo '<button type="button" class="btn btn-danger"  onClick="saveData()" id="save_btn">Save</button>';
+                                               }
+                                           ?>
+					  
 					  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
 					</div>
+
 				  </div>
 			    </form>
 			</div>
@@ -159,6 +175,7 @@
  
 <?php 
     if($_SERVER['HTTP_HOST'] != "publicz.raileurope.com"){ //this is to make work in development env
-        get_footer(); 
+        get_footer();  
 	}
  ?>
+ 

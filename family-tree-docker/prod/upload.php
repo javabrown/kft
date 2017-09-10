@@ -1,3 +1,20 @@
+<?php 
+ 
+        /*if($_SERVER['HTTP_HOST'] != "publicz.raileurope.com"){
+            require('../../wp-blog-header.php');
+		  
+		    if ( !current_user_can( 'administrator' ) && !current_user_can( 'editor' ) ) {
+                header('Content-Type: application/json');
+                header("Access-Control-Allow-Origin", "*");
+	            header('HTTP/1.1 401 Unauthorized', true, 401);
+			    echo "Readonly Access";
+                exit;
+            }
+		}*/
+		
+
+?>
+
 <?php
 $target_dir = "js/data-uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -58,7 +75,7 @@ function test_input($data) {
 
 function base64_to_jpeg($base64_string, $output_file) {
     // open the output file for writing
-    $ifp = fopen( $output_file, 'wb' ); 
+    $ifp = fopen( $output_file, 'w+' ); 
 
     // split the string on commas
     // $data[ 0 ] == "data:image/png;base64"
